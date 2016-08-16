@@ -7,6 +7,8 @@
 </head>
 <body>
 <h1>View All Questions</h1>
+<a href="/">HOME</a>
+<a href="/admin/addQuestion">Add New Question</a>
 <br><br>
 <table>
     <tr>

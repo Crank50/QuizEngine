@@ -47,16 +47,16 @@
     <br>
     <div id="type1">
         <form:label path="correctMultipleChoiceAnswer">Correct Multiple Choice Answer:</form:label>
-        <form:input path="correctMultipleChoiceAnswer" id="correctMultipleChoiceAnswer" maxlength="255" size="100" />
+        <form:input path="correctMultipleChoiceAnswer" id="correctMultipleChoiceAnswer" maxlength="500" size="200" />
         <br>
         <form:label path="wrongMultipleChoiceAnswer1">First Wrong Multiple Choice Answer:</form:label>
-        <form:input path="wrongMultipleChoiceAnswer1" id="wrongMultipleChoiceAnswer1" maxlength="255" size="100" />
+        <form:input path="wrongMultipleChoiceAnswer1" id="wrongMultipleChoiceAnswer1" maxlength="500" size="200" />
         <br>
         <form:label path="wrongMultipleChoiceAnswer2">Second Wrong Multiple Choice Answer:</form:label>
-        <form:input path="wrongMultipleChoiceAnswer2" id="wrongMultipleChoiceAnswer2" maxlength="255" size="100" />
+        <form:input path="wrongMultipleChoiceAnswer2" id="wrongMultipleChoiceAnswer2" maxlength="500" size="200" />
         <br>
         <form:label path="wrongMultipleChoiceAnswer3">Third Wrong Multiple Choice Answer:</form:label>
-        <form:input path="wrongMultipleChoiceAnswer3" id="wrongMultipleChoiceAnswer3" maxlength="255" size="100" />
+        <form:input path="wrongMultipleChoiceAnswer3" id="wrongMultipleChoiceAnswer3" maxlength="500" size="200" />
     </div>
     <div id="type2" style="display:none">
         <form:label path="trueOrFalse">True or False:</form:label>

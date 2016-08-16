@@ -132,13 +132,13 @@ public class QuizController {
         model.remove("incorrect");
         if(quizQuestion.getQuestionType().equals(QuizQuestion.QuestionType.MULTIPLE_CHOICE)) {
             if (multiAnswer != null && multiAnswer.equalsIgnoreCase("yes")) {
-                model.addAttribute("correct","GREAT JOB!");
+                model.addAttribute("correct","RAINBOW TO THE MAX!");
             } else {
                 model.addAttribute("incorrect","SORRY Wrong Answer");
             }
         } else if (quizQuestion.getQuestionType().equals(QuizQuestion.QuestionType.TRUE_FALSE)) {
             if(trueFalseAnswer != null && quizQuestion.isTrueOrFalse() == Boolean.valueOf(trueFalseAnswer)) {
-                model.addAttribute("correct","GREAT JOB!");
+                model.addAttribute("correct","RAINBOW TO THE MAX!!");
             } else {
                 model.addAttribute("incorrect","SORRY Wrong Answer");
             }
