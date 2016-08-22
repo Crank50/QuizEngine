@@ -19,6 +19,11 @@ public class DefaultController {
         return new RedirectView("/quiz/");
     }
 
+//    @RequestMapping(value="/jspDashboard")
+//    public String jspDashboard() {
+//        return "dashboard/dashboard";
+//    }
+
     @RequestMapping(value="/login")
     public String login() {
         return "login";

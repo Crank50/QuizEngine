@@ -48,6 +48,13 @@
             <artifactId>tomcat-embed-jasper</artifactId>
         </dependency>
 
+        <!-- ThymeLeaf -->
+        <dependency>
+            <groupId>org.thymeleaf</groupId>
+            <artifactId>thymeleaf</artifactId>
+            <version>3.0.0.RELEASE</version>
+        </dependency>
+
     </dependencies>
 
     <properties>

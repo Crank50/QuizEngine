@@ -4,23 +4,39 @@
 <html>
 <head>
     <title>QUIZ ANSWER</title>
-    <c:if test="${quizQuestion.questionType == 'CODE'}">
-        <link rel="stylesheet" href="https://highlightjs.org/static/demo/styles/dracula.css">
-        <script src="https://highlightjs.org/static/highlight.pack.js"></script>
-        <script>hljs.initHighlightingOnLoad();</script>
-    </c:if>
+    <link type="text/css" rel="stylesheet" href="/css/answer.css"/>
+    <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
+    <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
 </head>
 <body>
 <h1>QUIZ ANSWER</h1>
 
-<c:if test="${not empty correct}">
+<%--Link Awesome Fonts--%>
+<nav>
+<a target="_blank" href="http://stackoverflow.com/">
+    <i class="icon-camera-retro"></i> Stack OverFlow
+</a>
+<br>
+<a target="_blank" href="http://lmgtfy.com/">
+    <i class="fa fa-pied-piper" aria-hidden="true"></i>Use Google
+</a>
+<br>
+<a target="_blank" href="http://tv.giphy.com/?username=alastairgray">
+    <i class="fa fa-gitlab" aria-hidden="true"></i> Distract Yourself
+</a>
+    </nav>
+
+<%----------------------------------------------------------------%>
+<section>
+<c:if test="${not empty tracker.correct}">
     <div style="color:green;font-weight: bold;">
-        <c:out value="${correct}" />
+    Answered Correctly:    <c:out value="${tracker.correct}" />
     </div>
 </c:if>
-<c:if test="${not empty incorrect}">
+<c:if test="${not empty tracker.incorrect}">
     <div style="color:red;font-weight: bold;">
-        <c:out value="${incorrect}" />
+    Answered Incorrectly:    <c:out value="${tracker.incorrect}" />
     </div>
 </c:if>
 <br><br>
@@ -43,7 +59,7 @@ ANSWER:
                 <pre><code class="html">
             </c:when>
             <c:when test="${quizQuestion.category == 'CSS'}">
-                <pre><code class="css">
+                <pre><se class="css">
             </c:when>
             <c:otherwise>
                 <pre><code class="java">
@@ -61,5 +77,6 @@ ANSWER:
     <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
     <input type="submit" value="Next Question" />
 </form>
+</section>
 </body>
 </html>

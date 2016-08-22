@@ -1,0 +1,35 @@
+h1{
+    font-family:"Courier New";
+    color:dimgray;
+    background-color: black;
+
+}
+body{
+    background-color: lawngreen;
+}
+section{
+    position: relative;
+    top:50px;
+    border-style: ridge;
+    padding: 75px;
+    color:lightseagreen;
+    font-family: "Courier New";
+}
+a{
+    color: #000000;
+     up: 3500;
+}
+nav{
+    position: relative;
+
+}
+aside{
+    position:relative;
+    bottom: 100%;
+    border-style: ridge;
+    padding: 1px;
+    width: 100px;
+    height: 20px;
+}
+
+

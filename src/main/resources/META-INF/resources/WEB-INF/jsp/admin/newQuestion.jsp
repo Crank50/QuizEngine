@@ -4,6 +4,7 @@
 <html>
 <head>
     <title>Add New Question</title>
+    <link type="text/css" rel="stylesheet" href="/css/newQuestion.css"/>
     <script type="text/javascript">
         function changeTypeDisplay () {
             var e = document.getElementById("questionType");

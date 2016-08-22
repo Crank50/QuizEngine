@@ -1,0 +1,19 @@
+nav{
+    position: relative;
+    left: 50px;
+    border-style: groove;
+    width: 200px;
+}
+h1{
+    background-color: black;
+    color: white;
+
+}
+section{
+    color:lightseagreen;
+    font-family: "Courier New";
+    left:500px;
+    border-style: ridge;
+    padding: 75px;
+
+}

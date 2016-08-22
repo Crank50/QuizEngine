@@ -4,6 +4,7 @@
 <html>
 <head>
     <title>View All Questions</title>
+    <link type="text/css" rel="stylesheet" href="/css/viewAllQuestions.css"/>
 </head>
 <body>
 <h1>View All Questions</h1>
@@ -51,13 +52,21 @@
                     </c:forEach>
                 </c:if>
             </td>
+            <td><a href="/admin/deleteQuestion?id=${quizQuestion.id}">Delete:<c:out value="${quizQuestion.id}" /></a></td>
+
         </tr>
     </c:forEach>
 </table>
 <br><br>
 <a href="/">HOME</a>
+||
 &nbsp;&nbsp;&nbsp;&nbsp;
 <a href="/admin/addQuestion">Add New Question</a>
+||
+<a href="/restData/getAllQuestions">Bulk Download Questions</a>
+||
+<a href="/admin/uploadQuestions">Bulk Upload Questions</a>
+
 </body>
 </body>
 </html>
