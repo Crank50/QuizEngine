@@ -56,6 +56,7 @@
 
         </tr>
     </c:forEach>
+
 </table>
 <br><br>
 <a href="/">HOME</a>
@@ -66,7 +67,9 @@
 <a href="/restData/getAllQuestions">Bulk Download Questions</a>
 ||
 <a href="/admin/uploadQuestions">Bulk Upload Questions</a>
+||
+<td><a href="/admin/deleteAllQuestion?id=${quizQuestions}" onclick="return confirm('Really?')">Delete All</a></td>
 
-</body>
+
 </body>
 </html>

@@ -8,11 +8,12 @@ import java.util.HashMap;
 @Entity
 @Table(name = "quiz_question")
 public class QuizQuestion {
-    public static enum Category { ALL, CORE_JAVA, JAVA_IO, SQL, JAVA_DATABASE, SERVLET, JSP, HTML, CSS, SPRING, HIBERNATE, ANDROID} ;
-    public static enum QuestionType { ALL, MULTIPLE_CHOICE, TRUE_FALSE, CODE };
-    public static enum Difficulty { ALL, EASY, AVERAGE, DIFFICULT, CRAZY_HARD };
-    public static enum QuizType { REGULAR, FLASH_CARD };
-    public static enum QuizSize { SMALL, MEDIUM, LARGE, ALL };
+    public static enum Category { ALL, CORE_JAVA, JAVA_IO, SQL, JAVA_DATABASE, SERVLET, JSP, HTML, CSS, SPRING, HIBERNATE, ANDROID}
+    public static enum QuestionType { ALL, MULTIPLE_CHOICE, TRUE_FALSE, CODE }
+    public static enum Difficulty { ALL, EASY, AVERAGE, DIFFICULT, CRAZY_HARD }
+    public static enum QuizType { REGULAR, FLASH_CARD }
+    public static enum QuizSize { SMALL, MEDIUM, LARGE, ALL }
+
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -27,12 +28,15 @@ public class QuizQuestion {
     @NotNull
     private Difficulty difficulty;
 
+    private QuizSize quizSize;
     private String question;
     private String correctMultipleChoiceAnswer;
     private String wrongMultipleChoiceAnswer1;
     private String wrongMultipleChoiceAnswer2;
     private String wrongMultipleChoiceAnswer3;
     private boolean trueOrFalse;
+
+    @Column(columnDefinition = "Blob")
     private ArrayList<String> codeLines;
 
     public long getId() {
@@ -43,6 +47,14 @@ public class QuizQuestion {
         this.id = id;
     }
 
+
+    public QuizSize getQuizSize() {
+        return quizSize;
+    }
+
+    public void setQuizSize(QuizSize quizSize) {
+        this.quizSize = quizSize;
+    }
 
     public Category getCategory() {
         return category;

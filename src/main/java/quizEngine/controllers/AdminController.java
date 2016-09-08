@@ -12,6 +12,7 @@ import org.springframework.web.servlet.View;
 import org.springframework.web.servlet.view.RedirectView;
 import quizEngine.entities.QuizQuestion;
 import quizEngine.entities.QuizQuestionDAO;
+import quizEngine.entities.Tracker;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -63,6 +64,13 @@ public class AdminController {
         return new RedirectView("/admin/");
 
     }
+    @RequestMapping(value="deleteAllQuestion")
+    public View deleteAllQuestion() {
+        Iterable<QuizQuestion> quizQuestions = quizQuestionDAO.findAll();
+        quizQuestionDAO.delete(quizQuestions);
+        return new RedirectView("/admin/");
+
+    }
 
     @RequestMapping(value="saveEditedQuestion")
     public View saveEditedQuestion(QuizQuestion quizQuestion) {
@@ -80,10 +88,9 @@ public class AdminController {
         String returnView = "";
         if (!QuizQuestionsFile.isEmpty()) {
             try {
-                String path = "/Users/Justin/UPLOADS_Quiz_Engine/";
-                Files.write(Paths.get(path+QuizQuestionsFile.getOriginalFilename()),QuizQuestionsFile.getBytes());
+                Files.write(Paths.get("/Users/Justin/UPLOADS_Quiz_Engine/"+QuizQuestionsFile.getOriginalFilename()),QuizQuestionsFile.getBytes());
                 System.out.println("-------- File Upload Successful");
-                addUploadToDatabase(path+QuizQuestionsFile.getOriginalFilename());
+                addUploadToDatabase("/Users/Justin/UPLOADS_Quiz_Engine/"+QuizQuestionsFile.getOriginalFilename());
             } catch (IOException | RuntimeException e) {
                 e.printStackTrace();
             }
@@ -101,6 +108,7 @@ public class AdminController {
             List<QuizQuestion> uploadedQuestions = mapper.readValue(Files.newInputStream(quizQuestionUploadedFilePath), new TypeReference<List<QuizQuestion>>(){});
             for(QuizQuestion uploadedQuizQuestion : uploadedQuestions) {
                 QuizQuestion quizQuestion = new QuizQuestion();
+                Tracker tracker = new Tracker();
                 quizQuestion.setCategory(uploadedQuizQuestion.getCategory());
                 quizQuestion.setQuestionType(uploadedQuizQuestion.getQuestionType());
                 quizQuestion.setDifficulty(uploadedQuizQuestion.getDifficulty());
@@ -118,5 +126,6 @@ public class AdminController {
             ioe.printStackTrace();
         }
     }
+
 
 }

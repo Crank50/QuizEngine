@@ -52,6 +52,11 @@
                 <option value="<c:out value="${difficulty}"/>"><c:out value="${difficulty}"/></option>
             </c:forEach>
         </select><br><br>
+        Quiz Size: <select name="quizSize">
+            <c:forEach var="quizSize" items="${quizSizes}">
+                <option value="<c:out value="${quizSize}"/>"><c:out value="${quizSize}"/></option>
+            </c:forEach>
+        </select><br><br>
         <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
         <input type="submit" value="Let the Quiz Begin">
     </form>

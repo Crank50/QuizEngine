@@ -39,6 +39,11 @@
         Total Questions:    <c:out value="${tracker.totalQ}" />
     </div>
 </c:if>
+
+    <div style="color:green;font-weight: bold;">
+        Total Questions True:    <c:out value="${currentQuizTotal}" />
+    </div>
+
 <c:if test="${not empty tracker.correct}">
     <div style="color:green;font-weight: bold;">
       Correct:  <td><c:out value="${tracker.correct}" /></td>

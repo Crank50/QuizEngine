@@ -31,12 +31,18 @@
 <section>
 <c:if test="${not empty tracker.correct}">
     <div style="color:green;font-weight: bold;">
+        <c:out value ="${Right}"/>
+        <br>
     Answered Correctly:    <c:out value="${tracker.correct}" />
     </div>
 </c:if>
+    <br>
+    <br>
 <c:if test="${not empty tracker.incorrect}">
     <div style="color:red;font-weight: bold;">
-    Answered Incorrectly:    <c:out value="${tracker.incorrect}" />
+        <c:out value ="${Wrong}"/>
+        <br>
+        Answered Incorrectly:    <c:out value="${tracker.incorrect}" />
     </div>
 </c:if>
 <br><br>
@@ -69,7 +75,13 @@ ANSWER:
             <c:if test="${not empty codeLine && fn:length(codeLine)>0}">
                 <c:out value="${codeLine}"/>
             </c:if>
+            <c:if test="${not empty code}"/>
         </c:forEach>
+        <c:forEach var="code" items="${code}">
+           <c:if test="${not empty code}">
+               <c:out value="${code}"/><br>
+           </c:if>
+       </c:forEach>
         </code></pre>
     </c:if>
 <br><br>
